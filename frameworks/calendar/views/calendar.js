@@ -51,6 +51,25 @@ SCUI.CalendarView = SC.View.extend({
     }
     
   },
+
+  // ..........................................................
+  // touch support
+  // 
+  touchStart: function(evt){
+    return this.mouseDown(evt);
+  },
+  
+  touchEnd: function(evt){
+    return this.mouseUp(evt);
+  },
+  
+  touchEntered: function(evt){
+    return this.mouseEntered(evt);
+  },
+
+  touchExited: function(evt){
+    return this.mouseExited(evt);
+  },
   
   render: function(context, firstTime) {
     var monthStartOn = this.get('monthStartOn');

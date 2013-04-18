@@ -71,6 +71,10 @@ SCUI.DatePickerView = SC.View.extend(
       mouseDown: function (evt) {
         that.toggle();
         sc_super();
+      },
+      touchStart: function (evt) {
+        that.toggle();
+        sc_super();
       }
     };
     
@@ -91,7 +95,8 @@ SCUI.DatePickerView = SC.View.extend(
     view = this._date_button = this.createChildView( 
       SC.View.design( SCUI.SimpleButton, {
         classNames: ['scui-datechooser-button', 'calendar-icon'],
-        layout: {right: 5, top: 4, width: 16, height: 16},
+        //layout: {right: 5, top: 4, width: 16, height: 16},
+        
         target: this,
         action: 'toggle',
         isEnabledBinding: SC.binding('isEnabled', that)
